@@ -17,7 +17,7 @@ class AnimeController extends Controller
     /**
      * Lists all anime entities.
      *
-     * @Route("/", name="anime_index")
+     * @Route("/", name="anime")
      * @Method("GET")
      */
     public function indexAction()

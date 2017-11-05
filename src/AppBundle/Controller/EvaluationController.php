@@ -17,7 +17,7 @@ class EvaluationController extends Controller
     /**
      * Lists all evaluation entities.
      *
-     * @Route("/", name="evaluation_index")
+     * @Route("/", name="evaluation")
      * @Method("GET")
      */
     public function indexAction()
