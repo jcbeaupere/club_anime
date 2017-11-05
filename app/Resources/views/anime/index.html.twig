@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Animes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Lien</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for anime in animes %}
+            <tr>
+                <td><a href="{{ path('anime_show', { 'id': anime.id }) }}">{{ anime.titre }}</a></td>
+                <td>{{ anime.description }}</td>
+                <td>{{ anime.image }}</td>
+                <td>{{ anime.lien }}</td>
+                <td>{{ anime.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('anime_show', { 'id': anime.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('anime_edit', { 'id': anime.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('anime_new') }}">Create a new anime</a>
+        </li>
+    </ul>
+{% endblock %}
